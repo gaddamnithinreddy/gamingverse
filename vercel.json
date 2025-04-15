@@ -5,7 +5,7 @@
   "outputDirectory": "dist",
   "headers": [
     {
-      "source": "/assets/(.*)",
+      "source": "/assets/(.*).js",
       "headers": [
         {
           "key": "Content-Type",
@@ -16,16 +16,13 @@
   ],
   "routes": [
     {
-      "handle": "filesystem"
-    },
-    {
       "src": "/assets/(.*)",
       "headers": {
         "Content-Type": "application/javascript"
       }
     },
     {
-      "src": "/.*",
+      "src": "/(.*)",
       "dest": "/index.html"
     }
   ]
