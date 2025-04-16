@@ -5,45 +5,25 @@
   "outputDirectory": "dist",
   "headers": [
     {
-      "source": "/assets/(.*)\\.js",
+      "source": "/(.*)\\.js",
       "headers": [
         {
           "key": "Content-Type",
-          "value": "application/javascript"
+          "value": "application/javascript; charset=utf-8"
         }
       ]
     },
     {
-      "source": "/src/(.*)\\.tsx",
+      "source": "/(.*)\\.css",
       "headers": [
         {
           "key": "Content-Type",
-          "value": "application/javascript"
+          "value": "text/css; charset=utf-8"
         }
       ]
     }
   ],
-  "routes": [
-    {
-      "src": "/assets/(.*)",
-      "headers": {
-        "Content-Type": "application/javascript"
-      },
-      "continue": true
-    },
-    {
-      "src": "/src/(.*)\\.tsx",
-      "headers": {
-        "Content-Type": "application/javascript"
-      },
-      "continue": true
-    },
-    {
-      "handle": "filesystem"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/index.html"
-    }
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/index.html" }
   ]
 } 
