@@ -342,7 +342,7 @@
 .intro-overlay {
   position: fixed;
   inset: 0;
-  background: linear-gradient(to bottom right, #4338ca, #6d28d9, #7e22ce);
+  background: linear-gradient(to bottom right, #0c1326, #121a33, #1c1e3f);
   display: flex;
   align-items: center;
   justify-content: center;
