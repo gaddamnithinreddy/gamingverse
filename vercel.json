@@ -5,7 +5,16 @@
   "outputDirectory": "dist",
   "headers": [
     {
-      "source": "/assets/(.*).js",
+      "source": "/assets/(.*)\\.js",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "application/javascript"
+        }
+      ]
+    },
+    {
+      "source": "/src/(.*)\\.tsx",
       "headers": [
         {
           "key": "Content-Type",
@@ -19,7 +28,18 @@
       "src": "/assets/(.*)",
       "headers": {
         "Content-Type": "application/javascript"
-      }
+      },
+      "continue": true
+    },
+    {
+      "src": "/src/(.*)\\.tsx",
+      "headers": {
+        "Content-Type": "application/javascript"
+      },
+      "continue": true
+    },
+    {
+      "handle": "filesystem"
     },
     {
       "src": "/(.*)",
