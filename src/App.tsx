@@ -319,7 +319,13 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-900 to-gray-800 text-white">
+    <div className="min-h-screen bg-gradient-to-br from-indigo-900 via-purple-900 to-violet-800 text-white relative overflow-hidden">
+      {/* Animated background overlay */}
+      <div className="absolute inset-0 opacity-30">
+        <div className="absolute top-0 left-0 right-0 h-1/3 bg-gradient-radial from-purple-500/20 to-transparent"></div>
+        <div className="absolute bottom-0 left-0 right-0 h-1/2 bg-gradient-radial from-indigo-600/20 to-transparent"></div>
+      </div>
+      
       {showIntro && (
         <div className="intro-overlay intro-animation">
           <div className="intro-content intro-text-animation">
